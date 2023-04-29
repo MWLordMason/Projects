@@ -1,0 +1,69 @@
+:root {
+    --blueborder: #0466C8;
+    --bluedescirption: #023E7D;
+    --bluetab: #001845;
+    --bluewebsite: #33415C;
+    --bluetext: #979DAC; 
+}
+
+body {
+    background-color: var(--bluewebsite);
+}
+.websiteborder {
+    background-color: var(--blueborder);
+    margin: 3%;
+    border: 10px solid black;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+ 
+a:link {
+    color: black;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+a:visited {
+    color: black;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+  
+a:hover {
+    color: grey;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+  
+a:active {
+    color: black;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+ 
+.TabButton {
+    border: 8px ridge var(--bluetab);
+    font-size: 50px;
+ }
+
+.AboutTab {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between; 
+    text-align: center;
+    width: 30%;
+}
+
+.tabbackground {
+  background-color: var(--bluetab);
+  margin: auto;
+}
