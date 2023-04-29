@@ -12,48 +12,46 @@ body {
 }
 .websiteborder {
     background-color: var(--blueborder);
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 3%;
+    border: 10px solid black;
 }
 
 h1 {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    color: var(--bluetext);
-    border: 2px solid blue;
-    width: fit-content;
+    margin-top: 3%;
+    color: black;
     text-align: center;
     font-size: 50px;
 }
  
 a:link {
     color: black;
-    background-color: transparent;
+    background-color: var(--bluedescirption);
     text-decoration: none;
     text-transform: capitalize;
   }
   
   a:visited {
     color: black;
-    background-color: transparent;
+    background-color: var(--bluedescirption);
     text-decoration: none;
   }
   
   a:hover {
     color: grey;
-    background-color: transparent;
+    background-color: var(--bluedescirption);
     text-decoration: none;
   }
   
   a:active {
     color: black;
-    background-color: transparent;
+    background-color: var(--bluedescirption);
     text-decoration: none;
   }
  
   .TabButton {
-    border: 1px dotted blue;
+    border: 5px ridge var(--bluetab);
     font-size: 50px;
  }
 
@@ -63,8 +61,12 @@ a:link {
     display: flex;
     justify-content: space-between; 
     text-align: center;
-    border: 2px solid blue;
-    width: 30%;  
+    width: 30%;
+}
+
+.tabbackground {
+  background-color: var(--bluetab);
+  margin: auto;
 }
 
 .centertext {
@@ -72,4 +74,48 @@ a:link {
     font-size: 40px;
 }
 
+.images {
+  width: 35%;
+  height: 35%;
+  margin: auto;
+  border: 5px solid black;
+  background-color: var(--bluetext);
+  }
 
+.descriptionsleft {
+  border: 5px solid black; 
+  background-color: var(--bluedescirption);
+  width: 50%;
+  text-align: left;
+  padding: 10px;
+  margin: auto;
+  text-indent: 5%;
+}
+
+.descriptionsright {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
+  width: 50%;
+  text-align: left;
+  padding: 10px;
+  margin: auto;
+  text-indent: 5%;
+  }
+
+.descriptionalignment {
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.textandborder {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
+}
+
+.borderfit {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
