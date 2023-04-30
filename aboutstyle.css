@@ -12,7 +12,9 @@ body {
 }
 .websiteborder {
     background-color: var(--blueborder);
-    margin: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: auto;
     border: 10px solid black;
 }
 
@@ -45,7 +47,7 @@ a:hover {
   }
   
 a:active {
-    color: black;
+    color: white;
     background-color: var(--bluedescirption);
     text-decoration: none;
   }
@@ -82,7 +84,7 @@ a:active {
   background-color: var(--bluetext);
   }
 
-.descriptionsleft {
+.descriptions {
   border: 5px solid black; 
   background-color: var(--bluedescirption);
   width: 50%;
@@ -90,17 +92,8 @@ a:active {
   padding: 10px;
   margin: auto;
   text-indent: 5%;
+  font-size: 30px;
 }
-
-.descriptionsright {
-  border: 5px solid black;
-  background-color: var(--bluedescirption);
-  width: 50%;
-  text-align: left;
-  padding: 10px;
-  margin: auto;
-  text-indent: 5%;
-  }
 
 .descriptionalignment {
   display: flex;

@@ -44,7 +44,7 @@ a:hover {
   }
   
 a:active {
-    color: black;
+    color: white;
     background-color: var(--bluedescirption);
     text-decoration: none;
   }
