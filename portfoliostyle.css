@@ -1,9 +1,9 @@
 :root {
-    --blueborder: #0466C8;
-    --bluedescirption: #023E7D;
-    --bluetab: #001845;
-    --bluewebsite: #33415C;
-    --bluetext: #979DAC; 
+  --blueborder:#043da7;
+  --bluedescirption: #3290f5;
+  --bluetab:  #0e7ae6;
+  --bluewebsite: #2b5ec4;
+  --bluetext: #60646e; 
 }
 
 body {
