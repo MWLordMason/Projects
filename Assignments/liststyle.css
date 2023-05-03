@@ -11,7 +11,6 @@ h1 {
 
 
 .food-category {
-    /* border: 1px solid black; */
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -51,8 +50,8 @@ h1 {
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 75%;
+    height: 75%;
 }
 
 p {
