@@ -84,7 +84,7 @@ a:active {
 
   .descriptions {
     border: 5px solid black; 
-    background-color: var(--bluedescirption);
+    background-color: var(--bluewebsite);
     width: 75%;
     text-align: left;
     padding: 10px;
