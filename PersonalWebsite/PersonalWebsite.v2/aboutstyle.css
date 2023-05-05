@@ -1,0 +1,115 @@
+
+:root {
+    --blueborder:#043da7;
+    --bluedescirption: #3290f5;
+    --bluetab:  #0e7ae6;
+    --bluewebsite: #2b5ec4;
+    --bluetext: #60646e; 
+}
+
+body {
+    background-color: var(--bluewebsite);
+}
+.websiteborder {
+    background-color: var(--blueborder);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: auto;
+    border: 10px solid black;
+}
+
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+ 
+a:link {
+    color: black;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+a:visited {
+    color: black;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+  
+a:hover {
+    color: grey;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+  
+a:active {
+    color: white;
+    background-color: var(--bluedescirption);
+    text-decoration: none;
+  }
+ 
+.TabButton {
+    border: 8px ridge var(--bluetab);
+    font-size: 50px;
+ }
+
+.AboutTab {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between; 
+    text-align: center;
+    width: 30%;
+}
+
+.tabbackground {
+  background-color: var(--bluetab);
+  margin: auto;
+}
+
+.centertext {
+    text-align: center;
+    font-size: 40px;
+}
+
+.images {
+  width: 35%;
+  height: 35%;
+  margin: auto;
+  border: 5px solid black;
+  background-color: var(--bluetext);
+  }
+
+.descriptions {
+  border: 5px solid black; 
+  background-color: var(--bluedescirption);
+  width: 50%;
+  text-align: left;
+  padding: 10px;
+  margin: auto;
+  text-indent: 5%;
+  font-size: 30px;
+}
+
+.descriptionalignment {
+  display: flex;
+  margin-bottom: 3%;
+}
+
+.textandborder {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
+  
+}
+
+.borderfit {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
