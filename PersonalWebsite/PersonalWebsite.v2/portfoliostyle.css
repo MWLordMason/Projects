@@ -1,90 +1,91 @@
+
 :root {
-  --blueborder:#043da7;
-  --bluedescirption: #3290f5;
-  --bluetab:  #0e7ae6;
-  --bluewebsite: #2b5ec4;
-  --bluetext: #60646e; 
+  --bluedescirption: #3290f5; 
 }
 
 body {
-    background-color: var(--bluewebsite);
+  background-color: rgb(201, 201, 201);
 }
 .websiteborder {
-    background-color: var(--blueborder);
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: auto;
-    border: 10px solid black;
+  background-color: rgb(141, 138, 138);
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 10px solid black;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-h1 {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    color: black;
-    text-align: center;
-    font-size: 50px;
+.header {
+  background-color: var(--bluedescirption);
+  color: black;
+  text-align: center;
+  font-size: 50px;
 }
- 
+
+.AboutTab { 
+  background-color: var(--bluedescirption);
+  margin-top: 3%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border: 1px solid black;
+  text-align: center;
+  width: 100%;
+  
+}
+
+.buttons {
+display: flex;
+justify-content: space-around;
+}
+#portfolio {
+text-decoration: underline;
+}
+
+a {
+width: 25%;
+padding: 3px;
+font-size: 50px;
+}
 a:link {
-    color: black;
-    background-color: var(--bluedescirption);
-    text-decoration: none;
-    text-transform: capitalize;
-  }
-  
-a:visited {
-    color: black;
-    background-color: var(--bluedescirption);
-    text-decoration: none;
-  }
-  
-a:hover {
-    color: grey;
-    background-color: var(--bluedescirption);
-    text-decoration: none;
-  }
-  
-a:active {
-    color: white;
-    background-color: var(--bluedescirption);
-    text-decoration: none;
-  }
- 
-.TabButton {
-    border: 8px ridge var(--bluetab);
-    font-size: 50px;
- }
-
-.AboutTab {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: space-between; 
-    text-align: center;
-    width: 30%;
+  color: black;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
-.tabbackground {
-  background-color: var(--bluetab);
-  margin: auto;
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(71, 70, 70);
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  text-decoration: none;
 }
 
 .ptext {
+  border: 5px solid black;
+  background-color: var(--bluedescirption);
   text-decoration: underline;
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .images {
   margin: auto;
-  border: 5px solid black;
-  background-color: var(--bluetext);
   width: 300px;
   height: 300px;
   }
 
   .descriptions {
     border: 5px solid black; 
-    background-color: var(--bluewebsite);
+    background-color: var(--bluedescirption);
     width: 75%;
     text-align: left;
     padding: 10px;
