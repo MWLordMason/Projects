@@ -25,10 +25,6 @@
 
 let dieRoll = Math.floor(Math.random() * 11)
 
-let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Corridor(Empty) or Special Event', 'Empty, Special Feature', 'Vermin', 'Minions', 'Corridor(Empty) or Minions', 'Empty', 'Corridor(Empty) or Weird Monsters', 'Boss', 'Corridor(Empty) or Small Dragon Lair']
-
-let rollResult = contentRoll[dieRoll]
-
 function roomContent(num) {
     let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Corridor(Empty) or Special Event', 'Empty, Special Feature', 'Vermin', 'Minions', 'Corridor(Empty) or Minions', 'Empty', 'Corridor(Empty) or Weird Monsters', 'Boss', 'Corridor(Empty) or Small Dragon Lair']
     let result = contentRoll[num]
@@ -36,9 +32,9 @@ function roomContent(num) {
         return 'Treasure found'
     } else if (result === 'Treasure protected by a trap') {
         let traps = [0,1,3,4]
-        let treasure = ['gold', 'sword', 'gem', 'cup']
+        let treasure = ['gold ', 'sword ', 'gem ', 'cup ']
         let roll = Math.floor(Math.random() * 4)
-        return treasure[roll], traps[roll]
+        return treasure[roll] + traps[roll]
     } else if (result === 'Corridor(Empty) or Special Event') {
         return 'Corridor(Empty) or Special Event'
     } else {
@@ -47,4 +43,4 @@ function roomContent(num) {
 }
 
 
-console.log(roomContent(rollResult))
+console.log(roomContent(dieRoll))
