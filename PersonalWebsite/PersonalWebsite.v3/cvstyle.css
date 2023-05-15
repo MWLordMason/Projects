@@ -1,0 +1,129 @@
+:root {
+  --bluedescirption: #3290f5;
+}
+
+body {
+    background-color: rgb(201, 201, 201);
+}
+
+.websiteborder {
+  background-color: rgb(141, 138, 138);
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 0.5rem solid black;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.header {
+  background-color: var(--bluedescirption);
+  color: black;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.AboutTab { 
+  background-color: var(--bluedescirption);
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  border-top: .20rem solid black;
+  border-bottom: .20rem solid black;;
+  text-align: center;
+  width: 100%;  
+}
+
+.buttons {
+display: flex;
+justify-content: space-around;
+}
+
+#cv {
+  text-decoration: underline;
+}
+
+a {
+  padding: .5rem;
+  font-size: 2.5rem;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  
+a:hover {
+    color: grey;
+    text-decoration: none;
+  }
+  
+a:active {
+    color: white;
+    text-decoration: none;
+  }
+
+
+
+  .centertext {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.textandborder {
+  background-color: var(--bluedescirption);
+}
+
+.descriptionalignment {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 3%;
+}
+
+.ptext {
+  border: .30rem solid black;
+  background-color: var(--bluedescirption);
+  width: fit-content;
+  text-decoration: underline;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2rem;
+}
+
+.images {
+  width: 35%;
+  height: 35%;
+  max-height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.30rem solid black;
+  background-color: rgb(182, 182, 182);
+  }
+
+  .descriptions {
+    border: 0.30rem solid black; 
+    background-color: var(--bluedescirption);
+    width: 80%;
+    text-align: left;
+    padding: .5rem;
+    text-indent: 5%;
+    font-size: 1.3rem;
+    margin: auto;
+  }
+
+  .sectioncolumn {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: space-around;
+  }
+  
