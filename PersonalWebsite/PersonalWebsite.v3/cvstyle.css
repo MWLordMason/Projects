@@ -39,6 +39,7 @@ body {
 
 .buttons {
 display: flex;
+flex-flow: row wrap;
 justify-content: space-around;
 }
 
@@ -86,6 +87,7 @@ a:active {
 .descriptionalignment {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-evenly;
   margin-bottom: 3%;
 }
 
@@ -123,7 +125,7 @@ a:active {
   .sectioncolumn {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    align-items: space-around;
+    width: 40%;
+    align-content: space-around;
   }
   
