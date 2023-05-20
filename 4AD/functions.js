@@ -1,9 +1,43 @@
 
-const rooms = require("./rooms.js")
+// const rooms = require("./rooms")
 
-const entrance = require("./entrance.js")
+// const entrance = require("./entrance")
 
-console.log(entrance[0].image)
+const entrance = [
+    {
+        name: "Entrance 1",
+        type: "room",
+        image: "images/entrance/Entrance 1.png"
+    },
+    {
+        name: "Entrance 2",
+        type: "room",
+        image: "images/Entrance 2.png"
+    },
+    {
+        name: "Entrance 3",
+        type: "corridor",
+        image: "images/Entrance 3.png"
+    },
+    {
+        name: "Entrance 4",
+        type: "room",
+        image: "images/Entrance 4.png"
+    },
+    {
+        name: "Entrance 5",
+        type: "corridor",
+        image: "images/Entrance 5.png"
+    },
+    {
+        name: "Entrance 6",
+        type: "room",
+        image: "images/Entrance 6.png"
+    }
+]
+
+console.log(entrance)
+console.log("hello")
 
 /* This is for rolling the dice */
 const dice = {
@@ -116,6 +150,14 @@ const bosses = {
     attack), 2–3 bribe (all the gold of the party, with a minimum of 100 gold
     or one magic item), 4–5 fight, 6 quest.`
 }
+
+/* Rolling for Entrance */ 
+
+function entranceRoll() {
+    const rooms = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
+    let finalRoom = rooms[dice.d6]
+     return finalRoom
+ }
 
 /* Rolling for Rooms/Corridors */ 
 
