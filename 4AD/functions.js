@@ -1,4 +1,10 @@
 
+const rooms = require("./rooms.js")
+
+const entrance = require("./entrance.js")
+
+console.log(entrance[0].image)
+
 /* This is for rolling the dice */
 const dice = {
     d2: Math.floor(Math.random() * 2),
