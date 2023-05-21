@@ -1,5 +1,58 @@
 
 
 body {
+    background-color: grey;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+#map {
+    background-color: black;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+/* #grid {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+} */
+
+#gridimg {
+    width: 70%;
+    height: 70%;
+}
+
+#playerstats {
+    background-color: blue;
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.player {
+    background-color: red;
+    width: 45%;
+    height: 45%;
+    margin: auto;
+}
+
+#console {
     background-color: aqua;
+    width: 50%;
+    height: 50%;
+}
+
+#monster {
+    background-color: blueviolet;
+    width: 40%;
+    height: 40%;
 }
