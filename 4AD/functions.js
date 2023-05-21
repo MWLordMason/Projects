@@ -3,6 +3,7 @@
 
 // const entrance = require("./entrance")
 
+/*Entrance Rooms*/
 const entrance = [
     {
         name: "Entrance 1",
@@ -36,8 +37,189 @@ const entrance = [
     }
 ]
 
-console.log(entrance)
-console.log("hello")
+/*Rooms*/
+const rooms = [
+    {
+        name: "Room 11",
+        type: "corridor",
+        image: "images/rooms/Room 1.png"
+    },
+    {
+        name: "Room 12",
+        type: "corridor",
+        image: "images/rooms/Room 2.png"
+    },
+    {
+        name: "Room 13",
+        type: "corridor",
+        image: "images/rooms/Room 3.png"
+    },
+    {
+        name: "Room 14",
+        type: "corridor",
+        image: "images/rooms/Room 4.png"
+    },
+    {
+        name: "Room 15",
+        type: "room",
+        image: "images/rooms/Room 5.png"
+    },
+    {
+        name: "Room 16",
+        type: "room",
+        image: "images/rooms/Room 6.png"
+    },
+    {
+        name: "Room 21",
+        type: "room",
+        image: "images/rooms/Room 7.png"
+    },
+    {
+        name: "Room 22",
+        type: "room",
+        image: "images/rooms/Room 8.png"
+    },
+    {
+        name: "Room 23",
+        type: "room",
+        image: "images/rooms/Room 9.png"
+    },
+    {
+        name: "Room 24",
+        type: "room",
+        image: "images/rooms/Room 10.png"
+    },
+    {
+        name: "Room 25",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 26",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 31",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 32",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 33",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 34",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 35",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 36",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 41",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 42",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 43",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 44",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 45",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 46",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 51",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 52",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 53",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 54",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 55",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 56",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 61",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 62",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 63",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 64",
+        type: "room",
+        image: ""
+    },
+    {
+        name: "Room 65",
+        type: "corridor",
+        image: ""
+    },
+    {
+        name: "Room 66",
+        type: "room",
+        image: ""
+    }
+]
 
 /* This is for rolling the dice */
 const dice = {
@@ -154,20 +336,20 @@ const bosses = {
 /* Rolling for Entrance */ 
 
 function entranceRoll() {
-    const rooms = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
-    let finalRoom = rooms[dice.d6]
+    let finalRoom = entrance[dice.d6]
      return finalRoom
  }
+
+//  console.log(entranceRoll())
 
 /* Rolling for Rooms/Corridors */ 
 
 function roomRoll() {
-   const rooms = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
    let finalRoom = rooms[dice.d36]
     return finalRoom
 }
 
-// console.log(roomRoll(d36))
+console.log(roomRoll(dice.d36))
 
 /* Room Contents Table */
 
@@ -201,7 +383,39 @@ function roomContent() {
     }
 }
 
-//console.log(roomContent())
+/* Corridor Contents Table */
+
+function corridorContent() {
+    let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Corridor(Empty)', 'Empty, Special Feature', 'Vermin', 'Minions', 'Corridor(Empty)', 'Empty', 'Corridor(Empty)', 'Boss', 'Corridor(Empty)']
+    let result = contentRoll[dice.d11]
+    if(result === 'Treasure found') {
+        return 'Treasure found'
+    } else if (result === 'Treasure protected by a trap') {
+        let traps = [0,1,3,4]
+        let treasure = ['gold ', 'sword ', 'gem ', 'cup ']
+        return `Trap: ${traps[dice.d4]} Treasure: ${treasure[dice.d4]}`
+    } else if (result === 'Corridor(Empty)'){
+        return 'Corridor(Empty)'
+    } else if (result === 'Empty, Special Feature'){
+        return  'Empty, Special Feature'
+    } else if (result === 'Vermin'){
+        return `Oh No! You ran across some vermin! ${verminTable()}`
+    } else if (result === 'Minions') {
+        return 'Minions'
+    } else if (result === 'Corridor(Empty)') {
+        return 'Corridor(Empty)'
+    } else if (result === 'Empty'){
+        return 'Empty'
+    } else if (result === 'Corridor(Empty)'){
+        return 'Corridor(Empty)'
+    } else if (result === 'Boss'){
+        return 'Boss'
+    } else if (result === 'Corridor(Empty)'){
+        return 'Corridor(Empty)'
+    }
+}
+
+console.log(corridorContent())
 
 /* Vermin Table */
 
@@ -229,7 +443,7 @@ function verminTable() {
 function minionTable() {
     let result = dice.d6
     if (result === 0) {
-        if (d2 === 0) {
+        if (dice.d2 === 0) {
             return minions.skeletons
         } else {
             return minions.zombies
