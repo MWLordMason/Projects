@@ -36,7 +36,7 @@ const entrance = [
         image: "images/Entrance 6.png"
     }
 ]
-
+ 
 /*Rooms*/
 const rooms = [
     {
@@ -235,25 +235,25 @@ const dice = {
 
 /* Vermin */
 const vermin = {
-    rats: `${dice.d18} Rat(s) Level 1, no treasure. Any character wounded has a 1 in 6
+    one: `${dice.d18} Rat(s) Level 1, no treasure. Any character wounded has a 1 in 6
     chance of losing 1 additional life due to an infected wound.
     Reactions (d6): 1–3 flee, 4–6 fight`,
-    vampireBats:`${dice.d18} Vampire Bat(s), level 1, no treasure. Spells are cast at -1 due to
+    two:`${dice.d18} Vampire Bat(s), level 1, no treasure. Spells are cast at -1 due to
     their distracting shrieking. Despite the Vampire moniker, these are
     NOT Undead creatures.
     Reactions (d6): 1–3 flee, 4–6 fight`,
-    goblinSwarmlings:`${dice.d12} Goblin Swarmling(s), level 3, treasure -1, morale -1. Dwarves
+    three:`${dice.d12} Goblin Swarmling(s), level 3, treasure -1, morale -1. Dwarves
     attack them at +1.
     Reactions (d6): 1 flee, 2-3 flee if outnumbered, 4 bribe (5 gp x goblin),
     5–6 fight.`,
-    giantCentipedes:`${dice.d6+1} Giant Centipede(s), level 3, no treasure. Any character wounded
+    four:`${dice.d6+1} Giant Centipede(s), level 3, no treasure. Any character wounded
     by a giant centipede must save versus level 2 poison or lose 1
     additional life.
     Reactions (d6): 1 flee, 2-3 flee if outnumbered, 4-6 fight.`,
-    vampireFrogs:`${dice.d6+1} Vampire Frog(s), level 4, treasure -1. Despite the Vampire moniker,
+    five:`${dice.d6+1} Vampire Frog(s), level 4, treasure -1. Despite the Vampire moniker,
     these are not Undead creatures.
     Reactions (d6): 1 flee, 2-4 fight, 5-6 fight to the death`,
-    skeletalRats:`${dice.d12} Skeletal Rat(s), level 3 undead, no treasure. Crushing weapon
+    six:`${dice.d12} Skeletal Rat(s), level 3 undead, no treasure. Crushing weapon
     attacks are at +1 against skeletal rats, but they cannot be attacked
     by bows and slings. Clerics add +L when attacking them because
     they are undead.
@@ -295,25 +295,60 @@ const minions = {
     Reactions (d6): 1-2 ask for bribe (d6 gp per fungus), 3–6 fight.`
 }
 
+/* Weird Monsters */
+const weirdMonsters = {
+    one: `Minotaur. Level 5, 4 life points, 2 attacks, normal treasure. Due to the
+    power of his bull-rush charge, the first Defense roll against a minotaur is
+    at -1. Minotaurs love to eat halflings. Halflings may not use Luck in an
+    encounter with a Minotaur.
+    Reactions (d6): 1-2 bribe (60 gp), 3–4 fight, 6 fight to the death.`,
+    two: `Iron Eater. Level 3, 4 life, 3 attacks, no treasure. Defense rolls against
+    the iron eater do not enjoy bonus from heavy armor (shield and light
+    armor count). If the monster hits, the character takes no damage but
+    loses his armor, shield, main weapon, or 3d6 gp, in this order.
+    Reactions (d6): 1 flee, 2-3 bribe (d6 gp to distract the creature; you may
+    not use fools’ gold for this bribe), 4-6 fight.`,
+    three: `Chimera. Level 5, 6 life points, 3 attacks, normal treasure. On every of
+    the chimera’s turns, roll d6. On a 1 or 2 the chimera breathes fire
+    instead of performing multiple attacks. All characters must save versus
+    level 4 fire or lose 1 life.
+    Reactions (d6): 1 bribe (50 gp), 2–6 fight.`,
+    four: `Catoblepas. Level 4, 4 life points, treasure +1. All characters at the
+    beginning of the battle must save versus a level 4 gaze attack or lose 1
+    life. Reactions (d6): 1 flee, 2-6 fight`,
+    five:`Giant Spider. Level 5, 3 life, 2 attacks, 2 treasure rolls. Characters taking
+    a wound must save versus level 3 poison or lose an additional life. Due
+    to the spider’s webbing, the party may not withdraw from this fight
+    unless they cast a Fireball spell to burn the webs.
+    Reactions: always fight.`,
+    six: `Invisible Gremlins. A band of invisible gremlins steal d6+3 objects from
+    the party. You must surrender objects from any of your characters in
+    this order of preference: magic items, scrolls, potions, weapons, gems,
+    coins (in bundles of 10 gp each). If the gremlins steal ALL of your
+    equipment, they will leave a thank you message that counts as a clue.
+    The gremlins have no combat stats because it is impossible to fight
+    them. Encountering them gives no XP roll.`
+}
+
 /* Bosses */
 const bosses = {
-    mummy: `Mummy. Level 5 undead, 4 life points, 2 attacks, treasure +2. Any
+    one: `Mummy. Level 5 undead, 4 life points, 2 attacks, treasure +2. Any
     character killed by a mummy becomes another mummy and must be
     fought by the party. Mummies are attacked at +2 by the Fireball spell.
     Mummies never test morale.
     Reactions: always fight.`,
-    orcBrute: `Orc Brute. Level 5, 5 life points, 2 attacks, treasure +1 but may not have
+    two: `Orc Brute. Level 5, 5 life points, 2 attacks, treasure +1 but may not have
     any magic items, treat as 2d6 x d6 gold pieces instead.
     Reactions (d6): 1 bribe (50 gp), 2–5 fight, 6 fight to the death.`,
-    ogre: `Ogre. Level 5, 6 life points, normal treasure. Each hit from an ogre
+    three: `Ogre. Level 5, 6 life points, normal treasure. Each hit from an ogre
     inflicts 2 life points of damage.
     Reactions (d6): 1 bribe (30 gp), 2–3 fight, 4–6 fight to the death.`,
-    medusa: `Medusa. Level 4, 4 life points, treasure +1. All characters at the
+    four: `Medusa. Level 4, 4 life points, treasure +1. All characters at the
     beginning of the battle must save versus a level 4 gaze attack or be
     turned to stone. Petrified characters are out of the game until a Blessing
     spell is cast on them. Rogues add half their level to this save.
     Reactions (d6): 1 bribe (6d6 gp), 2 quest, 3–5 fight, 6 fight to the death.`,
-    chaosLord: `Chaos Lord. Level 6, 4 life, 3 attacks, 2 treasure rolls at +1. Before the
+    five: `Chaos Lord. Level 6, 4 life, 3 attacks, 2 treasure rolls at +1. Before the
     fight begins, roll d6 to determine if the Chaos Lord has any special
     powers: 1–3 no powers, 4 evil eye (characters must roll 4+ or be at -1 on
     all defense rolls until the chaos lord is slain), 5 energy drain (any
@@ -322,7 +357,7 @@ const bosses = {
     2 life points; Clerics add ½ level to this roll). When you kill a chaos lord,
     roll a die; on a 5 or 6 a character of your choice finds a clue (see p.58).
     Reactions (d6): 1 flee if outnumbered, 2 fight, 3–6 fight to the death.`,
-    smallDragon: `Small Dragon. Level 6, 5 life points, 2 attacks, 3 treasure rolls at +1. On
+    six: `Small Dragon. Level 6, 5 life points, 2 attacks, 3 treasure rolls at +1. On
     each turn of the dragon, roll d6 to determine what it does. On a 1 or 2
     the dragon breathes fire, inflicting 1 life to all characters who fail to
     save versus level 6 dragon breath (each character adds ½ level, rounded
@@ -331,6 +366,75 @@ const bosses = {
     Reactions (d6): 1 Sleeping (all characters can attack at +2 on their first
     attack), 2–3 bribe (all the gold of the party, with a minimum of 100 gold
     or one magic item), 4–5 fight, 6 quest.`
+}
+
+/* Traps */
+const traps = {
+    one: `A dart (level 2) attacks a random character.`,
+    two: `Poison gas (level 3) attacks all the characters.`,
+    three: `A trapdoor (level 4) opens under the feet of
+    the character leading the marching order.`,
+    four:`Bear trap (level 4) hitting the character
+    leading the marching order.`,
+    five: `Spears coming out from a wall (level 5)
+    attack two random characters.`,
+    six: `A giant stone block (level 5) falls on the last
+    character in the marching order.`
+}
+
+/* Special Features */
+const specialFeatures = {
+    one: `Fountain: All wounded characters recover 1 Life the first time they
+    encounter a fountain in an adventure. Further fountains have no effect.`,
+    two: `Blessed Temple: A character of your choice gains a +1 on Attack
+    against undead monsters or demons. As soon as the character kills one
+    undead or demon, the bonus disappears.`,
+    three: `Armory: All characters can change their weapons if they want, within
+    the limits of the weapons allowed to their character type. For example,
+    a Warrior who was using a sword and shield may discard his shield and
+    take a two-handed weapon, or exchange his sword for a mace.`,
+    four: `Cursed Altar: As you enter the room, an eerie glow emanates from a
+    sinister altar. A random character is cursed and has now -1 on his
+    Defense rolls. To break the curse, the character must either slay a boss
+    monster alone, or enter a Blessed Temple (see 2, above), or have a
+    Blessing spell cast on himself by a cleric.`,
+    five: `Statue: you may leave the statue alone or touch it. If you touch it, roll
+    d6. On a 1–3, the statue awakens and attacks your party (level 4 boss
+    with 6 life points, immune to all spells; if you defeat it, you find 3d6 x 10
+    gold pieces inside). On a 4-6, the statue breaks, and you find 3d6 x 10
+    gold pieces inside.`,
+    six: `Puzzle Room: the room contains a puzzle box. Its level is d6. You may
+    leave it alone or try to solve it. For every failed attempt, the character
+    trying to solve it loses 1 life. Wizards and rogues add their level to their
+    puzzle-solving roll. If the puzzle is solved, the box opens: make a
+    Treasure roll to determine its contents.`
+}
+
+/* Special Events */
+const specialEvents = {
+    one: `A ghost passes through the party. All characters must save versus level
+    4 fear or lose 1 life. A cleric adds his level to this roll.`,
+    two: `Wandering monster(s) attack the party. A boss monster met as
+    a wandering monster has no chance of being the final boss.`,
+    three: `A lady in white appears and asks the party to complete a quest. If you
+    accept, roll on the Quest table. If you refuse, she disappears. Ignore any
+    further appearances of the Lady in White in the game.`,
+    four: `Trap! ${rollTable(traps)}`,
+    five: `You meet a wandering healer. He will heal your party at the cost of 10
+    gold pieces per life healed. You may heal as many life points as you can
+    afford. You can meet the healer only once per game. If you meet him
+    again, reroll this result.`,
+    six: `You meet a wandering alchemist. He will sell you up to one potion of
+    healing per party member (50 gold pieces each) or a single dose of
+    blade poison (30 gold pieces). The potion of healing will heal all lost life
+    points to a single character, and can be swallowed at any moment
+    during the game as a free action. The blade poison lets you envenom a
+    single arrow or slashing weapon (not a crushing weapon). That weapon
+    will have a +1 on Attack against the first enemy you fight. Poison will not
+    work on undead monsters, demons, blobs, automatons, or living
+    statues.
+    You can meet a wandering alchemist only once per game. If you meet
+    him again, treat this result as a trap: ${rollTable(traps)}`
 }
 
 /* Rolling for Entrance */ 
@@ -344,44 +448,50 @@ function entranceRoll() {
 
 /* Rolling for Rooms/Corridors */ 
 
+// Currently working
+
 function roomRoll() {
-   let finalRoom = rooms[dice.d36]
-    return finalRoom
+    let nextRoom = rooms[dice.d36]
+    if (nextRoom.type === 'room') {
+        return `${nextRoom.name}, ${roomContent()}`
+    } else {
+        return `${nextRoom.name}, ${corridorContent()}`
+    }
 }
 
-console.log(roomRoll(dice.d36))
+// console.log(roomRoll())
 
 /* Room Contents Table */
 
 function roomContent() {
-    let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Corridor(Empty) or Special Event', 'Empty, Special Feature', 'Vermin', 'Minions', 'Corridor(Empty) or Minions', 'Empty', 'Corridor(Empty) or Weird Monsters', 'Boss', 'Corridor(Empty) or Small Dragon Lair']
+    let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Special Event', 'Empty, Special Feature', 'Vermin', 'Minions', 'Minions', 'Empty', 'Weird Monsters', 'Boss', 'Small Dragon Lair']
     let result = contentRoll[dice.d11]
     if(result === 'Treasure found') {
-        return 'Treasure found'
+        return `Treasure found! ${treasure()}`
     } else if (result === 'Treasure protected by a trap') {
-        let traps = [0,1,3,4]
-        let treasure = ['gold ', 'sword ', 'gem ', 'cup ']
-        return `Trap: ${traps[dice.d4]} Treasure: ${treasure[dice.d4]}`
-    } else if (result === 'Corridor(Empty) or Special Event') {
-        return 'Corridor(Empty) or Special Event'
+        return `Trap: ${trapTable()} Treasure: ${treasureTable()}`
+    } else if (result === 'Special Event') {
+        return `${specialEventTable()}`
     } else if (result === 'Empty, Special Feature'){
-        return  'Empty, Special Feature'
+        return  `Empty, ${specialFeatureTable()}`
     } else if (result === 'Vermin'){
         return `Oh No! You ran across some vermin! ${verminTable()}`
     } else if (result === 'Minions') {
-        return 'Minions'
-    } else if (result === 'Corridor(Empty) or Minions') {
-        return 'Corridor(Empty) or Minions'
+        return `Oh No! You ran across some minions! ${minionTable()}`
+    } else if (result === 'Minions') {
+        return `Oh No! You ran across some minions! ${minionTable()}`
     } else if (result === 'Empty'){
-        return 'Empty'
-    } else if (result === 'Corridor(Empty) or Weird Monsters'){
-        return 'Corridor(Empty) or Weird Monsters'
+        return 'Empty, wish to search the room?'
+    } else if (result === 'Weird Monsters'){
+        return `Oh No! You ran across a weird monster! ${weirdMonsterTable()}`
     } else if (result === 'Boss'){
-        return 'Boss'
-    } else if (result === 'Corridor(Empty) or Small Dragon Lair'){
-        return 'Corridor(Empty) or Small Dragon Lair'
+        return `Oh No! You ran across a Boss! ${bossTable()}`
+    } else if (result === 'Small Dragon Lair'){
+        return 'Small Dragon Lair'
     }
 }
+
+// console.log(roomContent())
 
 /* Corridor Contents Table */
 
@@ -401,85 +511,30 @@ function corridorContent() {
     } else if (result === 'Vermin'){
         return `Oh No! You ran across some vermin! ${verminTable()}`
     } else if (result === 'Minions') {
-        return 'Minions'
-    } else if (result === 'Corridor(Empty)') {
-        return 'Corridor(Empty)'
-    } else if (result === 'Empty'){
-        return 'Empty'
-    } else if (result === 'Corridor(Empty)'){
-        return 'Corridor(Empty)'
-    } else if (result === 'Boss'){
-        return 'Boss'
-    } else if (result === 'Corridor(Empty)'){
-        return 'Corridor(Empty)'
+        return `Oh No! You ran across some minions! ${minionTable()}`
     }
 }
 
-console.log(corridorContent())
+// console.log(corridorContent())
 
-/* Vermin Table */
+/* Dynamic Table */
 
-function verminTable() {
+function rollTable(object) {
     let result = dice.d6
     if (result === 0) {
-        return vermin.rats
+        return object.one
     } else if (result === 1) {
-        return vermin.vampireBats
+        return object.two
     } else if (result === 2) {
-        return vermin.goblinSwarmlings
+        return object.three
     } else if (result === 3) {
-        return vermin.giantCentipedes
+        return object.four
     } else if (result === 4) {
-        return vermin.vampireFrogs
+        return object.five
     } else if (result === 5) {
-        return vermin.skeletalRats
+        return object.six
     }
 }
 
-// console.log(verminTable())
+console.log(rollTable(specialEvents))
 
-/* Minion Table */
-
-function minionTable() {
-    let result = dice.d6
-    if (result === 0) {
-        if (dice.d2 === 0) {
-            return minions.skeletons
-        } else {
-            return minions.zombies
-        }
-    } else if (result === 1) {
-        return minions.goblins
-    } else if (result === 2) {
-        return minions.hobgoblins
-    } else if (result === 3) {
-        return minions.orcs
-    } else if (result === 4) {
-        return minions.trolls
-    } else if (result === 5) {
-        return minions.fungiFolk
-    }
-}
-
-// console.log(minionTable())
-
-/* Boss Table */
-
-function bossTable() {
-    let result = dice.d6
-    if (result === 0) {
-        return bosses.mummy
-    } else if (result === 1) {
-        return bosses.orcBrute
-    } else if (result === 2) {
-        return bosses.ogre
-    } else if (result === 3) {
-        return bosses.medusa
-    } else if (result === 4) {
-        return bosses.chaosLord
-    } else if (result === 5) {
-        return bosses.smallDragon
-    }
-}
-
-// console.log(bossTable())
