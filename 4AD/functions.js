@@ -229,6 +229,7 @@ const dice = {
     d6: Math.floor(Math.random() * 6),
     d11: Math.floor(Math.random() * 11),
     d12: Math.floor(Math.random() * 11) + 2,
+    d16: Math.floor(Math.random() * 16),
     d36: Math.floor(Math.random() * 36),
     d18: Math.floor(Math.random() * 16) + 3
 }
@@ -261,35 +262,43 @@ const vermin = {
 }
 
 /* Minions */
+
+function undead() {
+    let result = dice.d2
+    if (result === 0) {
+        return `${dice.d6+3} Skeleton(s), Level 3 undead.
+        No treasure. Crushing weapons attack Skeletons at +1. Arrows are at -1 against them. Skeleton never test morale.
+        Reactions: Always fight to the death.`
+    } else {
+        return `${dice.d6+1} Zombie(s), Level 3 undead.
+        No treasure. Arrows are at -1 against zombies. Zombies never test morale.
+        Reactions: Always fight to the death.`
+    }
+}
+
 const minions = {
-    skeletons: `${dice.d6+3} Skeleton(s), Level 3 undead.
-    No treasure. Crushing weapons attack Skeletons at +1. Arrows are at -1
-    against them. Skeleton never test morale.
-    Reactions: Always fight to the death.`,
-    zombies: `${dice.d6+1} Zombie(s), Level 3 undead.
-    No treasure. Arrows are at -1 against zombies. Zombies never test morale.
-    Reactions: Always fight to the death.`,
-    goblins:`${dice.d6+4} Goblin(s). Level 3, treasure -1. Goblins have a 1 in 6 chance of
+    one: `${undead()}`,
+    two:`${dice.d6+4} Goblin(s). Level 3, treasure -1. Goblins have a 1 in 6 chance of
     gaining surprise, thus acting before the party. If they do act before the
     party, roll on their reactions table below. Dwarves attack goblins at +1.
     Reactions (d6): 1 flee if outnumbered, 2-3 bribe (5 gp per goblin), 4–6 fight.`,
-    hobgoblins: `${dice.d6+1} Hobgoblin(s). Level 4, Treasure +1.
+    three: `${dice.d6+1} Hobgoblin(s). Level 4, Treasure +1.
     Reactions (d6): 1 flee if outnumbered, 2–3 bribe (10 gp per hobgoblin),
     4–5 fight, 6 fight to the death.`,
-    orcs:`${dice.d6+2} Orc(s). Level 4, Treasure: normal. Orcs are afraid of magic and must
+    four:`${dice.d6+2} Orc(s). Level 4, Treasure: normal. Orcs are afraid of magic and must
     test morale each time one or more is killed by a spell. If a spell caused
     their number to drop below 50%, they will test morale at -1. They never
     have magic items in their treasure: treat any rolled magic as d6 x d6
     gold pieces instead. Elves attack and cast spells against orcs at +1.
     Reactions (d6): 1-2 bribe (10 gp per orc), 3–5 fight, 6 fight to the death.`,
-    trolls:`${dice.d3+1} Troll(s). Level 5, Treasure: normal. Trolls regenerate, unless killed by a
+    five:`${dice.d3+1} Troll(s). Level 5, Treasure: normal. Trolls regenerate, unless killed by a
     spell, or unless a character uses one attack to chop an already killed
     troll to bits. If this does not happen, roll a die for every killed troll on its
     next turn. On a 5 or 6, the troll will come back to life and continue to
     fight. Halflings add +L to their Defense roll against trolls.
     Reactions (d6): 1–2 fight, 3–6 fight to the death. If a dwarf is present in
     the party, trolls will automatically fight to the death.`,
-    fungiFolk:`${dice.d12} Fungi Folk. Level 3, Treasure: normal. Any character taking
+    six:`${dice.d12} Fungi Folk. Level 3, Treasure: normal. Any character taking
     damage from the fungi folk must save versus level 3 poison or lose 1
     life. Halflings add their level on this save.
     Reactions (d6): 1-2 ask for bribe (d6 gp per fungus), 3–6 fight.`
@@ -437,6 +446,55 @@ const specialEvents = {
     him again, treat this result as a trap: ${rollTable(traps)}`
 }
 
+/* Magic Treasure */
+const magicTreasure = {
+    one: `Wand of Sleep: User may cast Sleep spell 3 times before its energy is
+    depleted. Only wizards and elves may use it. Add the user’s level to
+    determine the spell roll, as you would do for a Sleep spell cast by that
+    character.`,
+    two: `Ring of Teleportation: Allows user to automatically pass a Defense
+    roll by moving that character out of the room. That character may not
+    take part in the current combat, but rejoins the party as soon as the
+    combat is over. After one use, the ring loses its powers and becomes
+    a simple golden ring worth 1d6+1 gold pieces.`,
+    three: `Fools’ Gold: These magical (but fake) gold pieces will let the user
+    automatically bribe the next monster that asks for a bribe. No matter
+    what the monster asks, the gold will appear enough to satisfy his
+    greed. This is a one-use magic item.`,
+    four: `Magic Weapon: Gives +1 to its user’s Attack rolls. This is a permanent
+    magic item. Roll d6 to determine its type: 1 crushing light hand
+    weapon, 2 slashing light hand weapon, 3 crushing hand weapon, 4-5
+    slashing hand weapon, 6 bow.`,
+    five: `Potion of Healing: Can be swallowed at any moment, healing all lost
+    life to a single character. Drinking it does not require an action. This is
+    a one-use magic item, usable by all classes except barbarians.`,
+    six: `Fireball Staff: Allows its user to cast Fireball spell twice, then its
+    powers are depleted. Only wizards may use it. Add the user’s level to
+    determine the spell roll, as you would do for a Fireball spell cast by
+    that character.`
+}
+
+/* Scrolls */
+const scrolls = {
+    one: "Blessing",
+    two: "Fireball",
+    three: "Lightning Bolt",
+    four: "Sleep",
+    five: "Escape",
+    six: "Protect"
+}
+
+/* Treasure */
+const treasure = {
+    zero: "No treasure found",
+    one: `${dice.d6+1} gold pieces`,
+    two: `${dice.d11+2} gold pieces`,
+    three: `${rollTable(scrolls)}`,
+    four: `One gem worth ${(dice.d11+2) * 5} gold pieces`,
+    five: `One item of jewelry worth ${(dice.d16+3)*10} gold pieces`,
+    six: `${rollTable(magicTreasure)}` 
+}
+
 /* Rolling for Entrance */ 
 
 function entranceRoll() {
@@ -459,7 +517,7 @@ function roomRoll() {
     }
 }
 
-// console.log(roomRoll())
+console.log(roomRoll())
 
 /* Room Contents Table */
 
@@ -467,27 +525,27 @@ function roomContent() {
     let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Special Event', 'Empty, Special Feature', 'Vermin', 'Minions', 'Minions', 'Empty', 'Weird Monsters', 'Boss', 'Small Dragon Lair']
     let result = contentRoll[dice.d11]
     if(result === 'Treasure found') {
-        return `Treasure found! ${treasure()}`
+        return `Treasure found! ${rollTable(treasure)}`
     } else if (result === 'Treasure protected by a trap') {
-        return `Trap: ${trapTable()} Treasure: ${treasureTable()}`
+        return `Trap: ${rollTable(traps)} Treasure: ${rollTable(treasure)}`
     } else if (result === 'Special Event') {
-        return `${specialEventTable()}`
+        return `${rollTable(specialEvents)}`
     } else if (result === 'Empty, Special Feature'){
-        return  `Empty, ${specialFeatureTable()}`
+        return  `Empty, ${rollTable(specialFeatures)}`
     } else if (result === 'Vermin'){
-        return `Oh No! You ran across some vermin! ${verminTable()}`
+        return `Oh No! You ran across some vermin! ${rollTable(vermin)}`
     } else if (result === 'Minions') {
-        return `Oh No! You ran across some minions! ${minionTable()}`
+        return `Oh No! You ran across some minions! ${rollTable(minions)}`
     } else if (result === 'Minions') {
-        return `Oh No! You ran across some minions! ${minionTable()}`
+        return `Oh No! You ran across some minions! ${rollTable(minions)}`
     } else if (result === 'Empty'){
         return 'Empty, wish to search the room?'
     } else if (result === 'Weird Monsters'){
-        return `Oh No! You ran across a weird monster! ${weirdMonsterTable()}`
-    } else if (result === 'Boss'){
-        return `Oh No! You ran across a Boss! ${bossTable()}`
+        return `Oh No! You ran across a weird monster! ${rollTable(weirdMonsters)}`
+    } else if (result === 'Boss') {
+        return `Oh No! You ran across a Boss! ${rollTable(bosses)}`
     } else if (result === 'Small Dragon Lair'){
-        return 'Small Dragon Lair'
+        return bosses.six
     }
 }
 
@@ -499,19 +557,21 @@ function corridorContent() {
     let contentRoll = ['Treasure found', 'Treasure protected by a trap', 'Corridor(Empty)', 'Empty, Special Feature', 'Vermin', 'Minions', 'Corridor(Empty)', 'Empty', 'Corridor(Empty)', 'Boss', 'Corridor(Empty)']
     let result = contentRoll[dice.d11]
     if(result === 'Treasure found') {
-        return 'Treasure found'
+        return `Treasure found! ${rollTable(treasure)}`
     } else if (result === 'Treasure protected by a trap') {
-        let traps = [0,1,3,4]
-        let treasure = ['gold ', 'sword ', 'gem ', 'cup ']
-        return `Trap: ${traps[dice.d4]} Treasure: ${treasure[dice.d4]}`
+        return `Trap: ${rollTable(traps)} Treasure: ${rollTable(treasure)}`
     } else if (result === 'Corridor(Empty)'){
         return 'Corridor(Empty)'
     } else if (result === 'Empty, Special Feature'){
-        return  'Empty, Special Feature'
+        return  `Empty, ${rollTable(specialFeatures)}`
     } else if (result === 'Vermin'){
-        return `Oh No! You ran across some vermin! ${verminTable()}`
+        return `Oh No! You ran across some vermin! ${rollTable(vermin)}`
     } else if (result === 'Minions') {
-        return `Oh No! You ran across some minions! ${minionTable()}`
+        return `Oh No! You ran across some minions! ${rollTable(minions)}`
+    } else if (result === 'Boss') {
+        return `Oh No! You ran across a Boss! ${rollTable(bosses)}`
+    } else if (result === 'Empty'){
+        return 'Empty, wish to search the room?'
     }
 }
 
@@ -536,5 +596,5 @@ function rollTable(object) {
     }
 }
 
-console.log(rollTable(specialEvents))
+// console.log(rollTable(minions))
 
